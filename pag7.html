@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <table align="center">
+        <tr>
+            <td> <img src="logoEMPRENDIMIENTO.jpg" alt="Logo EMPRENDIMIENTO" width="250"></td>
+            <td> <center> <h1><b>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</b></h1></center></td>
+        </tr>
+    </table>
+
+    <!-- Main Layout -->
+    <div class="layout">
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <ul class="menu" id="menu">
+                <li><a href="index.html" class="nav-link">INICIO</a></li>
+                <li><a href="pag1.html" class="nav-link">Información sobre Emprendimiento</a></li>
+                <li><a href="pag2.html" class="nav-link">Datos Históricos</a></li>
+                <li><a href="pag3.html" class="nav-link">Formulario del Indice de Innovación</a></li>
+                <li><a href="pag4.html" class="nav-link">Emprendimiento Femenino</a></li>
+                <li><a href="pag5.html" class="nav-link">Tipos de Emprendimiento</a></li>
+                <li><a href="pag6.html" class="nav-link">Tendencia de la Innovación</a></li>
+                <li><a href="pag7.html" class="nav-link">Comparación: Emprendimiento e Innovación</a></li>
+                <li><a href="pag8.html" class="nav-link">Contáctenos</a></li>
+                <li><a href="pag9.html" class="nav-link">Agradecimientos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main-content">
+            <h2 class="text-center my-4"><b>Comparación: Emprendimiento e Innovación</b></h2>
+            <div class="container my-5">
+
+             <!-- Gráfico 1: Desarrollo de Emprendimiento -->
+             <h4 class="text-center">Desarrollo de Emprendimiento (Ranking CircleLoop)</h4>
+             <canvas id="chartEmprendimiento" width="400" height="200"></canvas>
+            
+             <p class="text-justify">
+                <h5> <b>FUENTE:</b> <br>
+                https://www.wipo.int/global_innovation_index/es/ </h5>
+            </p>
+
+             <!-- Gráfico 2: Innovación en el Mundo -->
+             <h4 class="text-center mt-5">Innovación en el Mundo (Índice Global de Innovación 2024)</h4>
+             <canvas id="chartInnovacion" width="400" height="200"></canvas>
+
+            <p class="text-justify">
+                <h5> <b>FUENTE:</b> <br>
+                https://www.wipo.int/global_innovation_index/es/ donde Colombia obtuvo la tercera posición en el ranking de CircleLoop con los datos del Global Entrepreneurship Monitor solo por detrás de Chile y la República de Corea
+            </h5>
+            </p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script para el gráfico -->
+    
+    <script>
+    // Datos para el primer gráfico: Desarrollo de Emprendimiento
+        const labelsEmprendimiento = [
+            "República de Corea", "Chile", "Colombia", "Estados Unidos",
+            "Letonia", "Polonia", "Italia", "Canadá", "Suecia", "Países Bajos"];
+        const dataEmprendimiento = [6.94, 6.91, 6.59, 5.5, 5.05, 4.8, 4.51, 4.45, 4.44, 4.3];
+
+        // Datos para el segundo gráfico: Innovación en el Mundo
+        const labelsInnovacion = [
+            "Suecia", "Estados Unidos", "República de Corea", "Países Bajos",
+            "Canadá", "Italia", "Letonia", "Chile", "Colombia"];
+        const dataInnovacion = [64.5, 62.4, 60.9, 58.8, 52.9, 45.3, 36.4, 32.6, 29.2];
+
+        // Configuración del gráfico de emprendimiento
+        new Chart(document.getElementById('chartEmprendimiento'), {
+            type: 'line',
+            data: {
+                labels: labelsEmprendimiento,
+                datasets: [{
+                    label: 'Puntaje de Desarrollo de Emprendimiento',
+                    data: dataEmprendimiento,
+                    fill: true,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Puntaje' }
+                    }
+                }
+            }
+        });
+
+        // Configuración del gráfico de innovación
+        new Chart(document.getElementById('chartInnovacion'), {
+            type: 'line',
+            data: {
+                labels: labelsInnovacion,
+                datasets: [{
+                    label: 'Índice Global de Innovación 2024',
+                    data: dataInnovacion,
+                    fill: true,
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        title: { display: true, text: 'Puntaje' }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <h4><b>CONTACTOS</b></h4>
+            <p><b>Juan David Giraldo Peña</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 302 370 1154  ✉️ <b>EMAIL:</b> juanmoncho21404@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Barrio Prado Medio - Manizales (Caldas)</p>
+            <p><b>Santiago García Jiménez</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 313 635 3004  ✉️ <b>EMAIL:</b> santigogarciajimenez05@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Vereda San Peregrino - Manizales (Caldas)</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

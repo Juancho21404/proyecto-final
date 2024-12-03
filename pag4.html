@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <table align="center">
+        <tr>
+            <td> <img src="logoEMPRENDIMIENTO.jpg" alt="Logo EMPRENDIMIENTO" width="250"></td>
+            <td> <center> <h1><b>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</b></h1></center></td>
+        </tr>
+    </table>
+    
+    <!-- Main Layout -->
+    <div class="layout">
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <ul class="menu" id="menu">
+                <li><a href="index.html" class="nav-link">INICIO</a></li>
+                <li><a href="pag1.html" class="nav-link">Información sobre Emprendimiento</a></li>
+                <li><a href="pag2.html" class="nav-link">Datos Históricos</a></li>
+                <li><a href="pag3.html" class="nav-link">Formulario del Indice de Innovación</a></li>
+                <li><a href="pag4.html" class="nav-link">Emprendimiento Femenino</a></li>
+                <li><a href="pag5.html" class="nav-link">Tipos de Emprendimiento</a></li>
+                <li><a href="pag6.html" class="nav-link">Tendencia de la Innovación</a></li>
+                <li><a href="pag7.html" class="nav-link">Comparación: Emprendimiento e Innovación</a></li>
+                <li><a href="pag8.html" class="nav-link">Contáctenos</a></li>
+                <li><a href="pag9.html" class="nav-link">Agradecimientos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2 class="text-center my-4"><b>Niveles de Emprendimiento Femenino en el Mundo</b></h2>
+            
+            <p class="text-justify">
+                El siguiente gráfico muestra los niveles de emprendimiento llevado a cabo por mujeres en distintas partes del mundo, estratificado por países:
+            </p>
+
+            <canvas id="femaleEntrepreneurshipChart" width="400" height="200"></canvas>
+
+            <script>
+                // Configuración de los datos para el gráfico
+                const data = {
+                    labels: ['Australia', 'Dinamarca', 'Francia', 'Alemania', 'España', 'Uruguay', 'Argentina', 'Ecuador', 'Brasil', 'El Salvador'],
+                    datasets: [{
+                        label: 'Porcentaje de Emprendimiento Femenino',
+                        data: [74.8, 69.7, 68.8, 63.6, 52.5, 44.5, 35.7, 32.3, 31.1, 29.9],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(255, 159, 64, 0.6)',
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)',
+                            'rgba(255, 159, 64, 0.6)',
+                            'rgba(54, 162, 235, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                };
+
+                // Configuración del gráfico
+                const config = {
+                    type: 'bar',
+                    data: data,
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Porcentaje de Emprendimiento Femenino por País'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                };
+
+                // Renderización del gráfico
+                const ctx = document.getElementById('femaleEntrepreneurshipChart').getContext('2d');
+                new Chart(ctx, config);
+            </script>
+
+            <p class="text-justify">
+                <h5> <b>FUENTE:</b> <br>
+                https://www.wipo.int/global_innovation_index/es/ </h5>
+            </p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <h4><b>CONTACTOS</b></h4>
+            <p><b>Juan David Giraldo Peña</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 302 370 1154  ✉️ <b>EMAIL:</b> juanmoncho21404@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Barrio Prado Medio - Manizales (Caldas)</p>
+            <p><b>Santiago García Jiménez</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 313 635 3004  ✉️ <b>EMAIL:</b> santigogarciajimenez05@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Vereda San Peregrino - Manizales (Caldas)</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

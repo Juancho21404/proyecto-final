@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <table align="center">
+        <tr>
+            <td> <img src="logoEMPRENDIMIENTO.jpg" alt="Logo EMPRENDIMIENTO" width="250"></td>
+            <td> <center> <h1><b>RED COMUNITARIA DE EMPRENDIMIENTO E INNOVACIÓN</b></h1></center></td>
+        </tr>
+    </table>
+
+    <!-- Main Layout -->
+    <div class="layout">
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <ul class="menu" id="menu">
+                <li><a href="index.html" class="nav-link">INICIO</a></li>
+                <li><a href="pag1.html" class="nav-link">Información sobre Emprendimiento</a></li>
+                <li><a href="pag2.html" class="nav-link">Datos Históricos</a></li>
+                <li><a href="pag3.html" class="nav-link">Formulario del Indice de Innovación</a></li>
+                <li><a href="pag4.html" class="nav-link">Emprendimiento Femenino</a></li>
+                <li><a href="pag5.html" class="nav-link">Tipos de Emprendimiento</a></li>
+                <li><a href="pag6.html" class="nav-link">Tendencia de la Innovación</a></li>
+                <li><a href="pag7.html" class="nav-link">Comparación: Emprendimiento e Innovación</a></li>
+                <li><a href="pag8.html" class="nav-link">Contáctenos</a></li>
+                <li><a href="pag9.html" class="nav-link">Agradecimientos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2 class="text-center my-4"><b>¡BIENVENIDOS a nuestra Red Comunitaria!</b></h2>
+            
+            <p class="text-justify">
+                <h3>Seleccione un enlace en el menú para más información.<br> </h3>
+            </p>
+
+            <p class="text-justify">
+                <h3>Aquí podrás acceder a información y recursos sobre el <b>Emprendimiento</b> <br>
+                y la <b>Innovación</b> en <b>COLOMBIA.</b> Explora para conocer más sobre nuestra misión, 
+                proyectos y herramientas disponibles. </h3>
+            </p>
+        </main>
+    </div>
+
+    <!-- JavaScript Personalizado -->
+    <script>
+        // Mostrar mensaje de bienvenida
+        window.addEventListener('load', () => {
+            alert('¡Bienvenido a la Red Comunitaria de Emprendimiento e Innovación!');
+        });
+
+        // Función para resaltar el enlace activo
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <h4><b>CONTACTOS</b></h4>
+            <p><b>Juan David Giraldo Peña</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 302 370 1154  ✉️ <b>EMAIL:</b> juanmoncho21404@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Barrio Prado Medio - Manizales (Caldas)</p>
+            <p><b>Santiago García Jiménez</b></p>
+            <p>📞 <b>TELÉFONO:</b> +57 313 635 3004  ✉️ <b>EMAIL:</b> santigogarciajimenez05@gmail.com</p>
+            <p> 📍 <b>DIRECCIÓN:</b> Calle 47# 33a - 21, Vereda San Peregrino - Manizales (Caldas)</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
